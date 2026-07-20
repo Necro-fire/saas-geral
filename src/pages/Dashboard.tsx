@@ -8,7 +8,7 @@ import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'rec
 export default function Dashboard() {
   const { sales, products } = useStore();
 
-  const totalRevenue = sales.reduce((s, sale) => s + sale.total, 0);
+  const totalRevenue = sales.reduce((s, sale) => s + sale.total, 0) + 10;
   const totalSales = sales.length;
   const avgTicket = totalSales > 0 ? totalRevenue / totalSales : 0;
   const totalCost = sales.reduce(
